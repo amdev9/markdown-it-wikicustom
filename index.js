@@ -2,15 +2,15 @@
 
 const Plugin = require('markdown-it-regexp')
 const extend = require('extend')
-const sanitize = require('sanitize-filename')
+// const sanitize = require('sanitize-filename')
 
 module.exports = (options) => {
 
   const defaults = {
     baseURL: '/',
-    relativeBaseURL: './',
+    relativeBaseURL: '', // './'
     makeAllLinksAbsolute: false,
-    uriSuffix: '.html',
+    uriSuffix: '', // '.html'
     htmlAttributes: {
     },
     generatePageNameFromLabel: (label) => {
@@ -18,8 +18,8 @@ module.exports = (options) => {
     },
     postProcessPageName: (pageName) => {
       pageName = pageName.trim()
-      pageName = pageName.split('/').map(sanitize).join('/')
-      pageName = pageName.replace(/\s+/, '_')
+      // pageName = pageName.split('/').map(sanitize).join('/')
+      pageName = pageName.replace(/\s+/, '-')
       return pageName
     },
     postProcessLabel: (label) => {
@@ -38,21 +38,22 @@ module.exports = (options) => {
     return str.replace(/^\/+/g, '')
   }
 
+  //  /\[\[([\w\s/]+)(\|([\w\s/]+))?\]\]/,
   return Plugin(
-    /\[\[([\w\s/]+)(\|([\w\s/]+))?\]\]/,
+    /\[\[(\s*(<(?:\\[<>]?|[^\s<>\\])*>|(?:\\[()]?|\([^\s\x00-\x1f\\]*\)|[^\s\x00-\x1f()\\])*?)?\s*\|)?((?:\[[^\[\]]*\]|\\[\[\]]?|`[^`]*`|[^\[\]\\])*?)\]\]/,
     (match, utils) => {
       let label = ''
       let pageName = ''
       let href = ''
       let htmlAttrs = []
       let htmlAttrsString = ''
-      const isSplit = !!match[3]
+      const isSplit = !!match[1]
       if (isSplit) {
         label = match[3]
-        pageName = match[1]
+        pageName = match[2]
       }
       else {
-        label = match[1]
+        label = match[3]
         pageName = options.generatePageNameFromLabel(label)
       }
 

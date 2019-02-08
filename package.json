@@ -7,7 +7,7 @@
     "coverage": "rimraf coverage && istanbul cover node_modules/.bin/_mocha",
     "lint-init": "eslint --init",
     "lint": "eslint index.js",
-    "test": "npm run lint && mocha -R spec",
+    "test": "mocha -R spec",
     "test-ci": "npm run lint && istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rimraf ./coverage"
   },
   "repository": {
