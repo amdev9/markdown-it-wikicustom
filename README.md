@@ -14,7 +14,7 @@ npm --save install markdown-it-wikicustom
 ...and *use* it:
 
 ```js
-const wikilinks = require('markdown-it-wikilinks')(options)
+const wikilinks = require('markdown-it-wikicustom')(options)
 const md = require('markdown-it')()
     .use(wikilinks)
     .render('Click [[Wiki Links|here]] to learn about [[/Wiki]] links.')
