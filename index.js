@@ -2,7 +2,6 @@
 
 const Plugin = require('markdown-it-regexp')
 const extend = require('extend')
-// const sanitize = require('sanitize-filename')
 
 module.exports = (options) => {
 
@@ -18,7 +17,6 @@ module.exports = (options) => {
     },
     postProcessPageName: (pageName) => {
       pageName = pageName.trim()
-      // pageName = pageName.split('/').map(sanitize).join('/')
       pageName = pageName.replace(/\s+/, '-')
       return pageName
     },
@@ -38,7 +36,6 @@ module.exports = (options) => {
     return str.replace(/^\/+/g, '')
   }
 
-  //  /\[\[([\w\s/]+)(\|([\w\s/]+))?\]\]/,
   return Plugin(
     /\[\[(\s*(<(?:\\[<>]?|[^\s<>\\])*>|(?:\\[()]?|\([^\s\x00-\x1f\\]*\)|[^\s\x00-\x1f()\\])*?)?\s*\|)?((?:\[[^\[\]]*\]|\\[\[\]]?|`[^`]*`|[^\[\]\\])*?)\]\]/,
     (match, utils) => {

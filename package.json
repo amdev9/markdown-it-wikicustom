@@ -1,7 +1,7 @@
 {
-  "name": "markdown-it-wikilinks",
-  "version": "1.0.1",
-  "description": "WikiMedia-style links for the markdown-it parser",
+  "name": "markdown-it-wikicustom",
+  "version": "0.0.1",
+  "description": "Wiki custom style links for the markdown-it",
   "main": "index.js",
   "scripts": {
     "coverage": "rimraf coverage && istanbul cover node_modules/.bin/_mocha",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsepia/markdown-it-wikilinks.git"
+    "url": "git+https://github.com/cypherpunk99/markdown-it-wikicustom.git"
   },
   "keywords": [
     "markdown-it-plugin",
@@ -22,12 +22,12 @@
     "wikimedia",
     "wiki"
   ],
-  "author": "Julio Sepia <jsepia@juliosepia.com>",
+  "author": "Alex Matveev <amatveevdev9@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jsepia/markdown-it-wikilinks/issues"
+    "url": "https://github.com/cypherpunk99/markdown-it-wikicustom/issues"
   },
-  "homepage": "https://github.com/jsepia/markdown-it-wikilinks#readme",
+  "homepage": "https://github.com/cypherpunk99/markdown-it-wikicustom#readme",
   "devDependencies": {
     "coveralls": "^2.11.14",
     "eslint": "^3.7.1",
@@ -40,7 +40,6 @@
   },
   "dependencies": {
     "extend": "^3.0.0",
-    "markdown-it-regexp": "^0.4.0",
-    "sanitize-filename": "^1.6.1"
+    "markdown-it-regexp": "^0.4.0"
   }
 }
