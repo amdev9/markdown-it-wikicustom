@@ -69,7 +69,7 @@ Append this suffix to every URL.
 
 ```js
 const html = require('markdown-it')()
-  .use(require('markdown-it-wikicustom')({ uriSuffix: '.php' }))
+  .use(require('markdown-it-wikicustom')({ uriSuffix: '.php', relativeBaseURL: './' }))
   .render('[[Main Page]]')
   // <p><a href="./Main-Page.php">Main Page</a></p>
 ```
