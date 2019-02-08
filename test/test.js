@@ -6,7 +6,7 @@ const plugin = require('../')()
 
 /*eslint-env mocha*/
 
-describe('markdown-it-wikilinks', function () {
+describe('markdown-it-wikicustom', function () {
   const md = require('markdown-it')()
               .use(plugin);
 
