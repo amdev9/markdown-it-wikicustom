@@ -44,7 +44,7 @@ const html = require('markdown-it')()
 
 ### `relativeBaseURL`
 
-**Default:** `./`
+**Default:** ``
 
 The base URL for relative wiki links.
 
@@ -63,7 +63,7 @@ Render all wiki links as absolute links.
 
 ### `uriSuffix`
 
-**Default:** `.html`
+**Default:** ``
 
 Append this suffix to every URL.
 
@@ -86,7 +86,7 @@ const attrs = {
   'rel': 'nofollow'
 }
 const html = require('markdown-it')()
-  .use(require('markdown-it-wikilinks')({ htmlAttributes: attrs }))
+  .use(require('markdown-it-wikicustom')({ htmlAttributes: attrs }))
   .render('[[Main Page]]')
   // <p><a href="Main-Page" class="wikilink" rel="nofollow">Main Page</a></p>
 ```
