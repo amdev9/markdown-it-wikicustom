@@ -17,7 +17,7 @@ module.exports = (options) => {
     },
     postProcessPageName: (pageName) => {
       pageName = pageName.trim()
-      pageName = pageName.replace(/\s+/, '-')
+      pageName = pageName.replace(/\s+/g, '-')
       return pageName
     },
     postProcessLabel: (label) => {

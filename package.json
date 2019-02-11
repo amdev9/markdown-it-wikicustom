@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-wikicustom",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Wiki custom style links for the markdown-it",
   "main": "index.js",
   "scripts": {
